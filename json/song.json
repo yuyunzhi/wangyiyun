@@ -1,0 +1,62 @@
+[
+    {
+        "id":"1",
+        "url":"http://p9p0nd4a5.bkt.clouddn.com/1.mp3",
+        "name":"大千世界",
+        "descript":"许嵩-大千世界"
+    },
+    {
+        "id":"2",
+        "url":"http://p9p0nd4a5.bkt.clouddn.com/2.mp3",
+        "name":"伶仃",
+        "descript":"霍尊 / 张力尹"
+    },
+    {
+        "id":"3",
+        "url":"http://p9p0nd4a5.bkt.clouddn.com/3.mp3",
+        "name":"天后",
+        "descript":"陈势安-天后-再爱一遍"
+    },
+    {
+        "id":"4",
+        "url":"http://p9p0nd4a5.bkt.clouddn.com/4.mp3",
+        "name":"夜色(粤语版)",
+        "descript":"梁剑东-夜色"
+    },
+    {
+        "id":"5",
+        "url":"http://p9p0nd4a5.bkt.clouddn.com/5.mp3",
+        "name":"初梦",
+        "descript":"大梦想家乐园-初梦"
+    },
+    {
+        "id":"6",
+        "url":"http://p9p0nd4a5.bkt.clouddn.com/6.mp3",
+        "name":"安和桥",
+        "descript":"宋冬野-安和桥北"
+    },
+    {
+        "id":"7",
+        "url":"http://p9p0nd4a5.bkt.clouddn.com/7.mp3",
+        "name":"与你常在",
+        "descript":"与你常在-eason and the duo band"
+    },
+    {     
+        "id":"8",
+        "url":"http://p9p0nd4a5.bkt.clouddn.com/8.mp3",
+        "name":"Girl Like You",
+        "descript":"Maroon 5 / Cardi B -Girls Like You"
+    },
+    {
+        "id":"9",
+        "url":"http://p9p0nd4a5.bkt.clouddn.com/9.mp3",
+        "name":"Rain after Summer",
+        "descript":"羽肿-Rain after Summer"
+    },
+    {
+        "id":"10",
+        "url":"http://p9p0nd4a5.bkt.clouddn.com/10.mp3",
+        "name":"Like That",
+        "descript":"Like That-吴亦凡"
+    }
+]

@@ -1,11 +1,44 @@
 $(function(){
-    $.get('/lyric.json').then(function(object){
+
+    let id = location.search.match(/\bid=([^&]*)/)[1]
+//播放歌
+    $.get('../json/song.json').then(function(response){
+        let songs = response
+        let song = songs.filter((s)=>{
+            return s.id == id
+        })
+        let url = song[0].url
+        let name = song[0].descript
+        $('.song-description>h2').text(name)
+        let audio = document.createElement('audio') 
+        audio.src=url
+        audio.oncanplay=function(){
+            audio.play()
+            $('.disc').addClass('active')
+            $('.icon-pause').addClass('playing')
+        }
+        $('.icon-pause').on('click',function(){
+            $('.icon-pause').removeClass('playing')
+            $('.icon-play').addClass('playing')
+            $('.disc').removeClass('active')
+            audio.pause();
+        })
+        $('.icon-play').on('click',function(){
+            $('.icon-play').removeClass('playing')
+            $('.icon-pause').addClass('playing')
+            $('.disc').addClass('active')
+            audio.play();
+        })
+        
+    })
+
+    //歌词
+    $.get('../json/lyric.json').then(function(object){
         let lyric = object.lyric
         let array = lyric.split('\n')
         let regex = /^\[(.+)\](.*)$/
         array = array.map(function(string,index){
             let matches = string.match(regex)
-            console.log(matches)
             if(matches){
                 return {
                     time:matches[1],
@@ -13,7 +46,7 @@ $(function(){
                 }
             }
         })
-        console.log(array)
+
         let $line = $('.lyric>.line')
         array.map(function(object){
             let $p = $(`<p>${object.words}</p>`)
@@ -23,25 +56,6 @@ $(function(){
 
     })
 
-    let audio = document.createElement('audio') 
-    audio.src='../xxxx.mp3'
-    audio.oncanplay=function(){
-        audio.play()
-        $('.disc').addClass('active')
-        $('.icon-pause').addClass('playing')
-    }
-    $('.icon-pause').on('click',function(){
-        $('.icon-pause').removeClass('playing')
-        $('.icon-play').addClass('playing')
-        $('.disc').removeClass('active')
-        audio.pause();
-    })
-    $('.icon-play').on('click',function(){
-        $('.icon-play').removeClass('playing')
-        $('.icon-pause').addClass('playing')
-        $('.disc').addClass('active')
-        audio.play();
-    })
 
     }
 

@@ -149,9 +149,39 @@ section.lastestMusic>ol>li .icon{
 }
 
 
+section.art{
+    background:url('./img/bg.png') no-repeat center 0;
+    padding-top:15.6vw;
+    padding-bottom: 8vw;
+}
+
+section.art .logo{
+    text-align: center;
 
 
-section.art{}
+}
+section.art .logo .logosvg{
+    width:61.7vw
+
+}
+
+section.art .openAPP{
+    border:1px solid #D43C33;
+    display: block;
+    text-align: center;
+    max-width:81.3vw;
+    padding:3vw 0;
+    color:#D43C33;
+    border-radius:6vw;
+    margin:2vw auto;
+    font-size:1.2em;
+}
 
 
+section.art .copyright{
+    font-size:3.2vw;
+    transform: scale(0.75);
+    text-align: center;
+    color:#888;
+}
 

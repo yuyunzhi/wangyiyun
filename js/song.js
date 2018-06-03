@@ -56,12 +56,15 @@ function initPlayer(url){
             }
         }
         if($thisLine){
+            $thisLine.addClass('active').prev().removeClass('active')
             let top = $thisLine.offset().top
             let lineTop = $('.line').offset().top
             let delta = top -lineTop-$('.lyric').height()/3
             $('.line').css('top',`-${delta}px`)
+
+            
         }
-    },1000)
+    },300)
 }
 
 

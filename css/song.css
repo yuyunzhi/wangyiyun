@@ -74,17 +74,22 @@ a{
 
 .song-description h2{
     color:white;
-    font-size:18px;
+    font-size:15px;
 }
 
 .song-description>.lyric>.line>p{
-    font-size:14px;
-    line-height:24px;
+    font-size:15px;
+    line-height:8.6vw;
+}
+
+.song-description>.lyric>.line>p.active{
+    color:white;
 }
 
 .song-description>.lyric{
-    height:72px;
+    height:25.9vw;
     overflow: hidden;
+    margin-top:2vw;
 }
 
 .song-description>.lyric>.line>p:active{

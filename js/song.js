@@ -1,16 +1,17 @@
 $(function(){
 
     let id = location.search.match(/\bid=([^&]*)/)[1]
-    $.get('/json/song.json').then(function(response){
+    $.get('../json/song.json').then(function(response){
         let songs = response
         let song = songs.filter((s)=>{
             return s.id == id
         })
         let url = song[0].url
-        let name = song[0].descript
+        let name = song[0].name
+        let descript = song[0].descript
         let lyric = song[0].lyric
         initPlayer(url)
-        initText(name,lyric)
+        initText(descript,lyric)
     })
     
 })
@@ -19,7 +20,7 @@ $(function(){
 
         
 function initPlayer(url){
-    $('.song-description>h2').text(name)
+
     let audio = document.createElement('audio') 
     audio.src=url
     audio.oncanplay=function(){
@@ -40,11 +41,40 @@ function initPlayer(url){
         audio.play();
     })
     setInterval(()=>{
-        console.log(audio.currentTime)
+        let seconds = audio.currentTime
+        let minute = parseInt(seconds/60)
+        let remain = seconds-minute*60
+        let time = `${addZero(minute)}:${addZero(remain)}`
+        let $lines = $('.line>p')
+        let $thisLine
+        for(let i=0;i<$lines.length;i++){
+            let currentLineTime = $lines.eq(i).attr('data-time')
+            let nextLineTime = $lines.eq(i+1).attr('data-time')
+            if( $lines.eq(i+1).length !== 0 && currentLineTime < time && nextLineTime > time ){
+                //显示第i行
+                $thisLine = $lines.eq(i)
+            }
+        }
+        if($thisLine){
+            let top = $thisLine.offset().top
+            let lineTop = $('.line').offset().top
+            let delta = top -lineTop-$('.lyric').height()/3
+            $('.line').css('top',`-${delta}px`)
+        }
     },1000)
 }
 
-function initText(name,lyric){
+
+function addZero(number){
+    if(number<10){
+        number = `0${number}`
+    }
+    return number
+}
+
+
+function initText(descript,lyric){
+
     let array = lyric.split('\n')
     let regex = /^\[(.+)\](.*)$/
     array = array.map(function(string,index){
@@ -56,6 +86,7 @@ function initText(name,lyric){
             }
         }
     })
+    $('.song-description >h2').text(descript)
     let $line = $('.lyric>.line')
     array.map(function(object){
         let $p = $(`<p>${object.words}</p>`)

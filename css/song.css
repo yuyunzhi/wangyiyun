@@ -67,6 +67,11 @@ a{
 
 }
 
+.song-description .line{
+    transition: transform 0.3s;
+    position: relative;
+}
+
 .song-description h2{
     color:white;
     font-size:18px;

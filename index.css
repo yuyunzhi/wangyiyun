@@ -121,7 +121,7 @@ section.lastestMusic>ol>li h3{
 }
 
 section.lastestMusic>ol>li .sq{
-    background:url('../img/SQ.png');
+    background:url('./img/SQ.png');
     background-size:12em 6em;
     height:0.8em;
     width:1.2em;
@@ -153,7 +153,7 @@ section.lastestMusic>ol>li .icon{
 
 
 section.art{
-    background:url('../img/bg.png') no-repeat center 0;
+    background:url('./img/bg.png') no-repeat center 0;
     padding-top:15.6vw;
     padding-bottom: 8vw;
 }

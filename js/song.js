@@ -1,7 +1,7 @@
 $(function(){
 
     let id = location.search.match(/\bid=([^&]*)/)[1]
-    $.get('../json/song.json').then(function(response){
+    $.get('/json/song.json').then(function(response){
         let songs = response
         let song = songs.filter((s)=>{
             return s.id == id
